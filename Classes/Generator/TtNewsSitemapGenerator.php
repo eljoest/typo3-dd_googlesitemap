@@ -183,7 +183,7 @@ class TtNewsSitemapGenerator extends AbstractSitemapGenerator {
 		}
 		if ($link == '') {
 			$conf = array(
-				'additionalParams' => '&tx_ttnews[tt_news]=' . $newsRow['uid'],
+				'additionalParams' => '&tx_ttnews[tt_news]=' . ($newsRow['l18n_parent']?$newsRow['l18n_parent']:$newsRow['uid']),
 				'forceAbsoluteUrl' => 1,
 				'parameter' => $forceSinglePid ?: $this->singlePid,
 				'returnLast' => 'url',
